@@ -23,9 +23,10 @@ body {
 /* FUN FACT BOX - i realized this is way too much but oh well */
 
 .fun-fact-box {
+    /* linear gradient for more depth ig */
     background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
     border-radius: 18px;
-    padding: 15px 20px;
+    padding: 20px 15px;
     margin: 40px auto;
     max-width: 700px;
     text-align: center;
@@ -49,6 +50,7 @@ body {
     padding: 10px 25px;
     border-radius: 12px;
     margin-bottom: 18px;
+    margin-top: 5px;
     box-shadow: 0 0 10px rgba(255,255,255,0.25);
     letter-spacing: 1px;
 }
@@ -108,12 +110,13 @@ img {
     max-width: 320px;
     border: 4px solid #fff;
     border-radius: 10px;
-    margin: 10px 20px 10px 0;
+    margin: 10px 20px 10px 10px;
     box-shadow: 0 0 8px rgba(255,255,255,0.15);
 }
 
 #lib-pic {
     float: left;
+    margin-right: 20px;
 }
 
 #badminton-pic {
@@ -125,8 +128,24 @@ img {
 #emotion-diagram {
     float: left;
     margin-right: 20px;
+    margin-left: 0px;
     border: none;
     box-shadow: none;
+}
+
+/* caption for emotion map */
+#caption {
+    clear:left;
+    display: block;
+    outline-style: dotted;
+    float: left;
+    margin-right: 65%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px 5px;
+    /* same linear grad */
+    background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+    box-shadow:rgb(68, 68, 143);
 }
 
 /* SOME DECORATION I GUESS */
@@ -143,7 +162,7 @@ a:link {
     text-decoration: none;
 }
 a:visited {
-    color: #b6d9e3;
+    color: #0099ff;
 }
 a:hover {
     color: azure;
