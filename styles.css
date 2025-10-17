@@ -187,3 +187,53 @@ a:active {
         padding: 20px;
     }
 }
+
+/* for mobile screens ofc */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.9em;
+    }
+
+    #container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 0.95em;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 1.1em;
+        margin-top: 25px;
+        padding: 6px 0;
+    }
+
+    p {
+        line-height: 1.6em;
+        text-align: left;
+    }
+
+    img {
+        float: none;
+        display: block;
+        margin: 15px auto;
+        max-width: 100%;
+    }
+
+    .fun-fact-box {
+        padding: 25px 20px;
+        margin: 30px auto;
+    }
+
+    .fun-fact-heading {
+        font-size: 1.3em;
+        padding: 8px 18px;
+    }
+}
