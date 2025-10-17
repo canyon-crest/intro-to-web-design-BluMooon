@@ -153,7 +153,7 @@ a:active {
     color: blue;
 }
 
-/* RESPONSIVENESS TO MEDIA */
+/* MEDIA SECTION */
 @media (max-width: 992px) {
     #container {
         width: 90%;
