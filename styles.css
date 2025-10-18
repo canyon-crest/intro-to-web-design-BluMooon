@@ -28,6 +28,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(255,255,255,0.15);
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* HEADINGS */
@@ -110,8 +111,17 @@ img {
     margin: 10px 20px 10px 10px;
     box-shadow: 0 0 8px rgba(255,255,255,0.15);
 }
-#lib-pic { float: left; }
-#badminton-pic { float: right; }
+img, .fun-fact-box, .image-caption-wrap {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+#lib-pic {
+    float: left;
+}
+#badminton-pic {
+    float: right;
+}
 
 /* EMOTION IMAGE + CAPTION */
 .image-caption-wrap {
