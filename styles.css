@@ -51,6 +51,7 @@ h2 {
     margin-top: 10px;
 }
 
+
 h3 {
     display: inline-block;
     border-bottom: 2px solid white;
@@ -111,13 +112,11 @@ img {
     margin: 10px 20px 10px 10px;
     box-shadow: 0 0 8px rgba(255,255,255,0.15);
 }
-img, .fun-fact-box, .image-caption-wrap {
-  max-width: 100%;
-  height: auto;
-  box-sizing: border-box;
-}
+
 #lib-pic {
     float: left;
+    max-width: 250px;
+    margin-bottom: 5px;
 }
 #badminton-pic {
     float: right;
@@ -165,9 +164,17 @@ img, .fun-fact-box, .image-caption-wrap {
 }
 
 /* LINKS */
-a:link { color: aqua; text-decoration: none; }
-a:visited { color: #9ad3ff; }
-a:hover { color: azure; text-decoration: underline; }
+a:link {
+    color: aqua;
+    text-decoration: none;
+}
+a:visited {
+    color: #9ad3ff;
+}
+a:hover {
+    color: azure;
+    text-decoration: underline; 
+}
 
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width: 1200px) {
