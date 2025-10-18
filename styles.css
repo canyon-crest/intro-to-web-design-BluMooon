@@ -66,7 +66,7 @@ h3 {
     float: right;
     width: 250px;
     background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.07));
-    padding: 12px 18px;
+    padding: 15px 18px;
     text-align: center;
     border-radius: 15px;
     margin: 100px 0 15px 25px;
@@ -115,11 +115,12 @@ img {
 
 #lib-pic {
     float: left;
-    max-width: 250px;
-    margin-bottom: 5px;
+    max-width: 280px;
+    margin-bottom: 10px;
 }
 #badminton-pic {
     float: right;
+    margin-left: 20px;
 }
 
 /* EMOTION IMAGE + CAPTION */
