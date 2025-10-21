@@ -31,10 +31,28 @@ body {
     transition: box-shadow 0.4s ease;
     box-sizing: border-box;
     overflow-x: hidden;
+    position: relative;
 }
 #container:hover {
     box-shadow: 0 0 60px rgba(255,255,255,0.5), 0 0 100px rgba(255,255,255,0.2);
 }
+/* subtle overlay!! */
+#container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/space-container-bg.jpg") center/cover no-repeat;
+    opacity: 0.25; 
+    border-radius: 10px;
+    z-index: 0;
+}
+
+#container > * {
+    position: relative;
+    z-index: 1;
+}
+
+
 /* galaxy background (hopefully this works) */
 body {
     background: url("images/galaxy.jpg") no-repeat center center fixed;
