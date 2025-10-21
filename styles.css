@@ -22,27 +22,78 @@ body {
     min-width: 300px;
     margin: 0 auto;
     min-height: 100vh;
-    background-color: rgb(68, 68, 143);
+    background-color: rgb(68, 68, 143, 0.95);
     padding: 50px;
     border-left: 3px solid white;
     border-right: 3px solid white;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.15);
+    box-shadow: 0 0 40px rgba(255,255,255,0.35), 0 0 80px rgba(255,255,255,0.1);
+    transition: box-shadow 0.4s ease;
     box-sizing: border-box;
     overflow-x: hidden;
 }
-
+#container:hover {
+    box-shadow: 0 0 60px rgba(255,255,255,0.5), 0 0 100px rgba(255,255,255,0.2);
+}
+/* galaxy background (hopefully this works) */
+body {
+    background: url("images/galaxy.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-color: rgba(17, 17, 106, 0.8);
+    background-blend-mode: overlay;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+}
 /* HEADINGS */
 h1 {
     text-align: center;
     font-family: "Times New Roman", Times, serif;
-    background-color: rgb(90, 90, 165);
+    background-color: rgba(90, 90, 165, 0.8);
     border: 2px solid white;
     border-radius: 12px;
     padding: 15px;
     color: #fff;
     margin-bottom: 25px;
+    transition: all 0.4s ease;
 }
+h1:hover {
+    transform: scale(1.03);
+    background-color: rgba(120, 120, 200, 0.9);
+    letter-spacing: 1px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.35);
+}
+
+/* header effect */
+.header-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("images/galaxy_header.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.25);
+  transition: all 0.4s ease;
+}
+
+.header-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+  border-radius: 15px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.header-wrap:hover {
+  box-shadow: 0 0 70px rgba(255,255,255,0.4);
+}
+
 
 h2 {
     text-align: center;
@@ -50,6 +101,139 @@ h2 {
     color: #e3efff;
     margin-bottom: 5px;
     margin-top: 10px;
+    transition: all 0.4s ease;
+}
+h2:hover {
+    transform: scale(1.02);
+    color: #cfdfff;
+    text-shadow: 0 0 8px rgba(255,255,255,0.5);
+}
+/* SUBHEADING ANIMATION */
+.progress-heading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: "Poppins", "Trebuchet MS", sans-serif;
+  font-size: 1.4em;
+  letter-spacing: 2px;
+  color: #d6c8ff;
+  text-align: center;
+  margin: 25px auto 40px auto;
+  width: fit-content;
+  background: rgba(230, 220, 255, 0.4);
+  padding: 12px 24px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(180, 100, 255, 0.3);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.progress-heading:hover {
+  background: rgba(140, 100, 255, 0.25);
+  box-shadow: 0 0 35px rgba(248, 243, 255, 0.4);
+  text-shadow: 0 0 12px rgba(190, 100, 255, 0.7);
+}
+
+.progress-heading::before {
+  content: "Welcome! Hover over me! ;)";
+  position: absolute;
+  color: #e6e6fa;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+
+.progress-heading:hover::before {
+  opacity: 0;
+}
+
+.progress-heading span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(15px);
+  transition: all 0.4s ease;
+  margin-right: 1px;
+  z-index: 1;
+}
+
+.progress-heading:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.progress-heading .space {
+  opacity: 1 !important;
+  transform: none !important;
+  margin-right: 8px;
+}
+
+/* ANIMATION */
+.progress-heading span:nth-child(1)  { transition-delay: 0.05s; }
+.progress-heading span:nth-child(2)  { transition-delay: 0.1s; }
+.progress-heading span:nth-child(3)  { transition-delay: 0.15s; }
+.progress-heading span:nth-child(4)  { transition-delay: 0.2s; }
+.progress-heading span:nth-child(5)  { transition-delay: 0.25s; }
+.progress-heading span:nth-child(6)  { transition-delay: 0.3s; }
+.progress-heading span:nth-child(7)  { transition-delay: 0.35s; }
+.progress-heading span:nth-child(8)  { transition-delay: 0.4s; }
+.progress-heading span:nth-child(9)  { transition-delay: 0.45s; }
+.progress-heading span:nth-child(10) { transition-delay: 0.5s; }
+.progress-heading span:nth-child(11) { transition-delay: 0.55s; }
+.progress-heading span:nth-child(12) { transition-delay: 0.6s; }
+.progress-heading span:nth-child(13) { transition-delay: 0.65s; }
+.progress-heading span:nth-child(14) { transition-delay: 0.7s; }
+.progress-heading span:nth-child(15) { transition-delay: 0.75s; }
+.progress-heading span:nth-child(16) { transition-delay: 0.8s; }
+.progress-heading span:nth-child(17) { transition-delay: 0.85s; }
+.progress-heading span:nth-child(18) { transition-delay: 0.9s; }
+.progress-heading span:nth-child(19) { transition-delay: 0.95s; }
+.progress-heading span:nth-child(20) { transition-delay: 1.0s; }
+.progress-heading span:nth-child(21) { transition-delay: 1.05s; }
+.progress-heading span:nth-child(22) { transition-delay: 1.1s; }
+.progress-heading span:nth-child(23) { transition-delay: 1.15s; }
+.progress-heading span:nth-child(24) { transition-delay: 1.2s; }
+.progress-heading span:nth-child(25) { transition-delay: 1.25s; }
+
+/* COSMIC DIVIDER */
+.cosmic-divider {
+  position: relative;
+  width: 80%;
+  height: 2px;
+  margin: 35px auto 10px auto;
+  background: linear-gradient(90deg, rgba(255,255,255,0), #b9d4ff, rgba(255,255,255,0));
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(200,220,255,0.5);
+  overflow: hidden;
+}
+
+.cosmic-divider::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -10%;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 12px 3px rgba(255,255,255,0.9);
+  animation: shootingStar 3.5s linear infinite;
+}
+
+@keyframes shootingStar {
+  0%   { left: -10%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { left: 110%; opacity: 0; }
 }
 
 
@@ -58,8 +242,206 @@ h3 {
     border-bottom: 2px solid white;
     padding-bottom: 8px;
     margin-top: 40px;
-    font-size: 1.4em;
+    font-size: 1.8em;
+    letter-spacing: 0.8px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#main-heading {
+  font-family: "Times New Roman", serif;
+  color: #ffffff;
+  font-size: 2.4em;
+  z-index: 1;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  text-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+.header-wrap:hover #main-heading {
+  color: #b5d9ff;
+  font-family: fantasy;
+  letter-spacing: 1.8px;
+  font-size: 2.3em;
+  transform: scale(1.07);
+  text-shadow: 0 0 25px rgba(255,255,255,0.6);
+}
+
+
+/* VIDEO SECTION */
+.video-section {
+    background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.07));
+    border: 2px solid rgba(255,255,255,0.25);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 35px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(10px); 
+}
+.video-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 50px rgba(255,255,255,0.35);
+}
+
+.video-section iframe {
+    width: 100%;
+    max-width: 640px;
+    height: 360px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    border: none;
+}
+
+.video-desc {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #e9f2ff;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+/* heading INSIDE video section */
+.video-heading {
+    font-family: "Times New Roman", serif;
+    background: linear-gradient(90deg, #c9d8ff, #a9b9ff);
+    color: #10105a;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 0 12px rgba(255,255,255,0.3);
     letter-spacing: 0.5px;
+}
+.video-heading:hover {
+    transform: scale(1.03);
+    background: linear-gradient(90deg, #b5c7ff, #92a4ff);
+    box-shadow: 0 0 25px rgba(255,255,255,0.4);
+}
+
+/* STARFIELD BETWEEN HEADINGS */
+.starfield {
+  position: relative;
+  height: 60px;
+  margin: 25px auto 10px auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Multiple shooting stars */
+.starfield::before,
+.starfield::after,
+.starfield .star-1,
+.starfield .star-2,
+.starfield .star-3 {
+  content: "";
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Star 1 - Main shooting star */
+.starfield::before {
+  width: 4px;
+  height: 4px;
+  top: 30%;
+  left: -30px;
+  animation: shootingStarRight 4s infinite ease-in-out;
+}
+
+/* Star 2 - Smaller, faster star */
+.starfield::after {
+  width: 2px;
+  height: 2px;
+  top: 60%;
+  left: -50px;
+  animation: shootingStarRight 3s infinite ease-in-out 1s;
+}
+
+/* Star 3 - Left to right medium speed */
+.starfield .star-1 {
+  width: 3px;
+  height: 3px;
+  top: 20%;
+  left: -40px;
+  animation: shootingStarRight 3.5s infinite ease-in-out 0.5s;
+}
+
+/* Star 4 - Right to left */
+.starfield .star-2 {
+  width: 3px;
+  height: 3px;
+  top: 70%;
+  right: -30px;
+  left: auto;
+  animation: shootingStarLeft 4s infinite ease-in-out 2s;
+}
+
+/* Star 5 - Right to left fast */
+.starfield .star-3 {
+  width: 2px;
+  height: 2px;
+  top: 50%;
+  right: -40px;
+  left: auto;
+  animation: shootingStarLeft 2.5s infinite ease-in-out 1.5s;
+}
+
+@keyframes shootingStarRight {
+  0% {
+    left: -30px;
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(10px) scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(-5px) scale(0.8);
+  }
+  100% {
+    left: calc(100% + 30px);
+    opacity: 0;
+    transform: translateY(0) scale(0.3);
+  }
+}
+
+@keyframes shootingStarLeft {
+  0% {
+    right: -30px;
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(5px) scale(0.8);
+  }
+  100% {
+    right: calc(100% + 30px);
+    opacity: 0;
+    transform: translateY(0) scale(0.3);
+  }
+}
+
+/* Add some static twinkling stars in the background */
+.starfield {
+  background: radial-gradient(ellipse at center, 
+    rgba(255,255,255,0.05) 0%, 
+    transparent 70%);
 }
 
 /* FUN FACT BOX */
@@ -67,14 +449,15 @@ h3 {
     float: right;
     width: 250px;
     background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.07));
-    padding: 15px 18px;
+    padding: 12px 10px;
     text-align: center;
     border-radius: 15px;
-    margin: 100px 0 15px 25px;
+    margin: 150px 0 25px 25px;
     box-shadow: 0 0 20px rgba(255,255,255,0.1);
-    transition: all 0.4s ease; /* THESE EFFECTS I LEARNED LAST YEAR IN CSF USING W3SCHOOLS */
+    transition: all 0.4s ease;
     position: relative;
-    top: 10px;
+    top: 20px;
+    margin-right: 15px;
 
 }
 .fun-fact-box:hover {
@@ -85,10 +468,11 @@ h3 {
     font-family: "Times New Roman", Times, serif;
     color: rgb(17,17,106);
     background-color: #bcd9f9;
-    padding: 10px 18px;
+    padding: 8px 15px;
     border-radius: 10px;
     text-align: center;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
+    margin-top: 10px;
     box-shadow: 0 0 10px rgba(255,255,255,0.25);
 }
 .fun-fact-box ul {
@@ -101,9 +485,13 @@ h3 {
 
 /* PARAGRAPHS & IMAGES */
 p {
-    line-height: 1.8em;
+    line-height: 2.4em;
     text-align: justify;
     margin-bottom: 25px;
+    background-color: rgba(255, 255, 255, 0.07);
+    padding: 15px 18px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.08);
 }
 
 img {
@@ -204,6 +592,10 @@ a:active {
   #container {
     width: 95%;
   }
+  .video-section iframe {
+    max-width: 500px;
+    height: 280px;
+  }
 }
 
 
@@ -223,6 +615,17 @@ a:active {
     margin: 20px auto;
     max-width: 75%;
     }
+    .video-section iframe {
+        width: 90%;
+        height: 240px;
+    }
+    .video section {
+        padding: 18px;
+    }
+    .video-heading {
+        font-size: 1.1em;
+        padding: 8px 10px;
+    }
 }
 
 
@@ -237,5 +640,9 @@ a:active {
     #lib-pic, #badminton-pic, img {
         width: 90%;
         max-width: none;
+    }
+    .video-sectino iframe {
+        width: 100%;
+        height: 200px;
     }
 }
